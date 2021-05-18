@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>農村地方美食小吃特色料理</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 768px)" href="screen.css">
+</head>
+
+<body>
+    <div id="loading" class="loading">
+        <div class="loading__spinner"></div>
+        <div class="loading__text">資料下載中...請稍後！</div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <p class="title__text">
+                農村地方美食小吃特色料理
+            </p>
+        </div>
+        <div class="bar">
+            <select id="city" name="bar__city" class="bar__select">
+                <option value="default" selected disabled>請選擇行政區域...</option>
+            </select>
+            <select id="town" name="bar__town" class="bar__select">
+                <option value="default" selected disabled>請選擇鄉鎮區...</option>
+            </select>
+        </div>
+        <div id="content" class="content">
+            <!--這裡會用 JS 帶資料進來，但是因為不好閱讀，所以放了一個範例的註解-->
+            <!-- <div class="row0">
+                <div id="block0" class="block">
+                    <div id="photo0" class="block__photo">
+                        <img id="img0" class="photo__img"
+                            src="https://ezgo.coa.gov.tw/Uploads/opendata/TainmaMain01/APPLY_D/20151007173924.jpg">
+                    </div>
+                    <div id="cover0" class="block__cover"></div>
+                    <div id="city0" class="block__city">
+                        <p id="city0" class="city">苗栗縣</p>
+                    </div>
+                    <div id="intro0" class="block__intro">
+                        <p id="town0" class="intro__town">大湖鄉</p>
+                        <p id="restaurant0" class="intro__restaurant">湖莓宴餐坊</p>
+                        <div id="dash0" class="intro__dash">湖莓宴餐坊</div>
+                        <p id="detail0" class="intro__detail">湖莓宴餐坊</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer__text">政府資料開放平台</p>
+        <a class="footer__href" href="https://data.gov.tw/dataset/6037">https://data.gov.tw/dataset/6037</a>
+    </div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="entity.js"></script>
+<script type="text/javascript" src="Data.json"></script>
+
+</html>

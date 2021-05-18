@@ -1,0 +1,44 @@
+.loading {
+    padding: 75% 0px;
+}
+
+.main {
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.title {
+    margin: 15px 10px;
+    font-size: 7.5vw;
+}
+
+/*----bar----*/
+
+.bar {
+    height: 85px;
+    margin: 5px 0;
+    background-color: initial;
+}
+
+.bar__select {
+    font-size: medium;
+    margin: 5px;
+    padding: 5px;
+    width: 95%;
+    background-color: rgb(221, 221, 221);
+}
+
+/*----block----*/
+
+.block--empty {
+    display: none;
+}
+
+.block {
+    width: 95%;
+    height: 200px;
+    margin: 5px 0;
+}
