@@ -67,7 +67,7 @@ function addElement(parentID, tagName, id, elementClass, text) {
 }
 
 function addBlock(parentRowId, i, r) {
-    setBlockAttribute(parentRowId, "div", `block${i}`, "block", "");
+    setBlockAttribute(parentRowId, "div", `block${i}`, "block");
     addElement(`block${i}`, "div", `photo${i}`, "block__photo", "");
     addImage(`photo${i}`, "img", `img${i}`, "photo__img", "", r.PicURL);
     addElement(`block${i}`, "div", `cover${i}`, "block__cover", "");
@@ -84,16 +84,15 @@ function addBlock(parentRowId, i, r) {
 function addEmptyBlock(parentRowId, i) {
     if (i % columnCount == 1) {
         for (var j = 0; j < 2; j++) {
-            addElement(parentRowId, "div", "block" + (i + j), "block block--empty", "");
+            setBlockAttribute(parentRowId, "div", "block" + (i + j), "block block--empty");
         }
     } else if (i % columnCount == 2) {
-        addElement(parentRowId, "div", `block${i}`, "block block--empty", "");
+        setBlockAttribute(parentRowId, "div", `block${i}`, "block block--empty");
     }
 }
 
-function setBlockAttribute(parentID, tagName, id, elementClass, text) {
+function setBlockAttribute(parentID, tagName, id, elementClass) {
     var element = document.createElement(tagName);
-    var textNode = document.createTextNode(text);
     var contentWidth = document.getElementById("content").offsetWidth;
     var blockWidth = Math.ceil(contentWidth / columnCount);
     var blockHeight = blockWidth * 2 / 4;
@@ -101,7 +100,6 @@ function setBlockAttribute(parentID, tagName, id, elementClass, text) {
     element.setAttribute("id", id);
     element.setAttribute("class", elementClass);
     element.setAttribute("style", `width:${blockWidth}px; height:${blockHeight}px;`);
-    element.appendChild(textNode);
 
     document.getElementById(parentID).appendChild(element);
 }
@@ -116,8 +114,6 @@ function addImage(parentID, tagName, id, elementClass, text, src) {
 
     document.getElementById(parentID).appendChild(element);
 }
-
-
 
 function changeCity() {
     var cityDropDownList = document.getElementById("city");
