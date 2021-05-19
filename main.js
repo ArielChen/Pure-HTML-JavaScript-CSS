@@ -5,11 +5,11 @@ window.onload = function () {
     loadJsonFile();
 }
 
-function setBlockAttribute(parentID, tagName, id, elementClass, text) {
+function setBlockAttribute(parentID, tagName, id, elementClass, text) { 
     var element = document.createElement(tagName);
     var textNode = document.createTextNode(text);
-    var contentWidth = document.getElementById("content").offsetWidth; //1739
-    var blockWidth =  Math.ceil(contentWidth / columnCount); //blockWidth = 525.6666666666666, contentWidth = 173
+    var contentWidth = document.getElementById("content").offsetWidth; 
+    var blockWidth =  Math.ceil(contentWidth / columnCount); 
     var blockHeight = blockWidth * 2 / 4;
 
     element.setAttribute("id", id);
