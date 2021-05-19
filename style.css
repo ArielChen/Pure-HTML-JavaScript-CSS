@@ -19,31 +19,31 @@ a {
 /*--------*/
 
 .main {
-   margin: 0px 4.3%;
+    margin: 0px 4.3%;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    text-align: center;
     margin: 30px 0px;
+    text-align: center;
 }
 
- /*----loading----*/
+/*----loading----*/
 
 .loading {
     position: absolute;
-    text-align: center;
-    line-height: 100px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
     z-index: 999;
+    padding: 20% 0;
     width: 100%;
     height: 100vh;
-    padding: 20% 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 100px;
 }
 
 .loading__text {
@@ -52,93 +52,101 @@ a {
 
 .loading__spinner {
     position: relative;
-    height: 50px;
-    width: 50px;
     margin: auto;
+    width: 50px;
+    height: 50px;
     background-color: rgb(255, 255, 255);
     -webkit-animation: loading__spinner 5s infinite linear;
     animation: loading__spinner 5s infinite linear;
- }
- 
- @-webkit-keyframes loading__spinner {
-    0% { 
-       -webkit-transform: perspective(180px) rotateX(0deg) rotateY(0deg);
-    }
-    25% { 
-       -webkit-transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
-    }
-    50% { 
-       -webkit-transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
-    }
-    75% { 
-       -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(179.9deg);
-    }
-    100% { 
-       -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(360deg);
-    }
- }
- 
- @keyframes loading__spinner {
-    0% { 
-       transform: perspective(180px) rotateX(0deg) rotateY(0deg);
-       -webkit-transform: perspective(180px) rotateX(0deg) rotateY(0deg);
-    }
-    25% { 
-       transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
-       -webkit-transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
-    }
-    50% { 
-       transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
-       -webkit-transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
-    }
-    75% { 
-       transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
-       -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(179.9deg);
-    }
-    100% { 
-       transform: perspective(180px) rotateX(0deg) rotateY(360deg);
-       -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(360deg);
-    }
- }
+}
 
- /*----bar----*/
- 
- .bar {
-     border-radius: 7px;
-     height: 90px;
-     background-color: rgb(255, 255, 255);
-     text-align: center;
-     margin: 10px 1%;
- }
- 
- .bar__select {
-     color: rgb(0, 0, 0);
-     font-size: large;
-     margin: 22px 20px;
-     padding: 0px 10px;
-     width: 25%;
-     height: 40px;
-     border: 3px rgba(255, 255, 255, 0) solid;
-     border-radius: 3px;
-     background-color: rgb(238, 238, 238);
- }
- 
- .bar__select:focus,
- .bar__select:active {
-     border: 3px rgb(157, 191, 246) solid;
- }
- 
- .bar__select>option {
-     background-color: rgb(255, 255, 255);
- }
+@-webkit-keyframes loading__spinner {
+    0% {
+        -webkit-transform: perspective(180px) rotateX(0deg) rotateY(0deg);
+    }
+
+    25% {
+        -webkit-transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    50% {
+        -webkit-transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
+    }
+
+    75% {
+        -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(179.9deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(360deg);
+    }
+}
+
+@keyframes loading__spinner {
+    0% {
+        -webkit-transform: perspective(180px) rotateX(0deg) rotateY(0deg);
+        transform: perspective(180px) rotateX(0deg) rotateY(0deg);
+    }
+
+    25% {
+        -webkit-transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
+        transform: perspective(180px) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    50% {
+        -webkit-transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
+        transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
+    }
+
+    75% {
+        -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(179.9deg);
+        transform: perspective(180px) rotateX(-180deg) rotateY(179.9deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(180px) rotateX(-360deg) rotateY(360deg);
+        transform: perspective(180px) rotateX(0deg) rotateY(360deg);
+    }
+}
+
+/*----bar----*/
+
+.bar {
+    margin: 10px 1%;
+    height: 90px;
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.bar__select {
+    margin: 22px 20px;
+    padding: 0px 10px;
+    width: 25%;
+    height: 40px;
+    border: 3px rgba(255, 255, 255, 0) solid;
+    border-radius: 3px;
+    background-color: rgb(238, 238, 238);
+    color: rgb(0, 0, 0);
+    font-size: large;
+}
+
+.bar__select:focus,
+.bar__select:active {
+    border: 3px rgb(157, 191, 246) solid;
+}
+
+.bar__select>option {
+    background-color: rgb(255, 255, 255);
+}
 
 /*----title----*/
 
 .title {
-    font-size: 38px;
-    font-weight: 900;
-    text-align: center;
     margin: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 38px;
 }
 
 .title__text {
@@ -148,64 +156,85 @@ a {
 /*----block----*/
 
 .block {
-    overflow: hidden;
-    display: inline-block;
     position: relative;
-    /* width: 30.8%; */
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px 1%;
     height: 244px;
     color: rgb(255, 255, 255);
-    margin: 0px 1%;
 }
 
 .block:hover .block__intro {
     -webkit-animation: 1.8s textSlide;
-            animation: 1.8s textSlide;
+    animation: 1.8s textSlide;
+
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes textSlide{
-    from {bottom: -68px;}
-    to {bottom: 5px;}
+@-webkit-keyframes textSlide {
+    from {
+        bottom: -68px;
+    }
+
+    to {
+        bottom: 5px;
+    }
 }
 
-@keyframes textSlide{
-    from {bottom: -68px;}
-    to {bottom: 5px;}
-} 
+@keyframes textSlide {
+    from {
+        bottom: -68px;
+    }
+
+    to {
+        bottom: 5px;
+    }
+}
 
 .block:hover .block__photo {
     -webkit-animation: 1s photoZoomIn;
-            animation: 1s photoZoomIn;
+    animation: 1s photoZoomIn;
+
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes photoZoomIn{
-    from {transform: scale(1);}
-    to {transform: scale(1.05);}
+@-webkit-keyframes photoZoomIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
 }
 
-@keyframes photoZoomIn{
-    from {transform: scale(1);}
-    to {transform: scale(1.05);}
-} 
+@keyframes photoZoomIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
 
 .photo__img {
-    z-index: 0;
     position: absolute;
+    left: 0px;
+    z-index: 0;
     max-width: 100%;
     width: 100%;
-    left: 0px;
 }
 
 .block__cover {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255,0,0,0) 71%);
-    z-index: 2;
     position: absolute;
+    z-index: 2;
     max-width: 100%;
     width: 100%;
     height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 0, 0, 0) 71%);
 }
 
 .block__intro,
@@ -215,12 +244,12 @@ a {
 
 .block__city {
     position: relative;
-    font-size: smaller;
-    font-weight: 500;
-    background-color: rgb(220, 142, 0);
     width: 55px;
     height: 25px;
+    background-color: rgb(220, 142, 0);
     text-align: center;
+    font-weight: 500;
+    font-size: smaller;
     line-height: 25px;
 }
 
@@ -235,14 +264,14 @@ a {
 }
 
 .intro__town {
+    text-align: left;
     font-weight: lighter;
     font-style: italic;
-    text-align: left;
 }
 
 .intro__restaurant {
-    font-size: large;
     text-align: left;
+    font-size: large;
 }
 
 .intro__dash {
@@ -253,14 +282,15 @@ a {
 }
 
 .intro__detail {
-    text-align: left;
-    width:100%;
+    display: -webkit-box;
     overflow: hidden;
-    text-overflow: clip; 
-    display: -webkit-box; 
     -webkit-box-orient: vertical;
+    width: 100%;
+    text-align: left;
+    text-overflow: clip;
+
     -webkit-line-clamp: 2;
-} 
+}
 
 /*----footer----*/
 
