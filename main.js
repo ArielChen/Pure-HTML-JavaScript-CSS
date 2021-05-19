@@ -5,6 +5,21 @@ window.onload = function () {
     loadJsonFile();
 }
 
+function setBlockAttribute(parentID, tagName, id, elementClass, text) {
+    var element = document.createElement(tagName);
+    var textNode = document.createTextNode(text);
+    var contentWidth = document.getElementById("content").offsetWidth;
+    var blockWidth = contentWidth / columnCount - 0.01 * window.innerWidth * (columnCount - 1);
+    var blockHeight = blockWidth * 2 / 4;
+
+    element.setAttribute("id", id);
+    element.setAttribute("class", elementClass);
+    element.setAttribute("style", `width:${blockWidth}px; height:${blockHeight}px;`);
+    element.appendChild(textNode);
+
+    document.getElementById(parentID).appendChild(element);
+}
+
 function changeCity() {    
     var cityDropDownList = document.getElementById("city");
     city = cityDropDownList.options[cityDropDownList.selectedIndex].value;
@@ -133,28 +148,38 @@ function optionCompare(i, sample, target, r) {
     return i;
 }
 
-function addBlock(parentRowID, i, r) {
-    addElement(parentRowID, "div", "block" + i, "block", "");
-    addElement("block" + i, "div", "photo" + i, "block__photo", "");
-    addImage("photo" + i, "img", "img" + i, "photo__img", "", r.PicURL);
-    addElement("block" + i, "div", "cover" + i, "block__cover", "");
-    addElement("block" + i, "div", "city" + i, "block__city", "");
-    addElement("city" + i, "p", "city" + i, "city", r.City);
+function addBlock(parentRowId, i, r) {
+    setBlockAttribute(parentRowId, "div", `block${i}`, "block", "");
+    addElement(`block${i}`, "div", `photo${i}`, "block__photo", "");
+    addImage(`photo${i}`, "img", `img${i}`, "photo__img", "", r.PicURL);
+    addElement(`block${i}`, "div", `cover${i}`, "block__cover", "");
+    addElement(`block${i}`, "div", `city${i}`, "block__city", "");
+    addElement(`city${i}`, "p", `city${i}`, "city", r.City);
 
-    addElement("block" + i, "div", "intro" + i, "block__intro", "");
-    addElement("intro" + i, "p", "town" + i, "intro__town", r.Town);
-    addElement("intro" + i, "p", "restaurant" + i, "intro__restaurant", r.Name);
-    addElement("intro" + i, "div", "dash" + i, "intro__dash", "");
-    addElement("intro" + i, "p", "detail" + i, "intro__detail", r.HostWords);
+    addElement(`block${i}`, "div", `intro${i}`, "block__intro", "");
+    addElement(`intro${i}`, "p", `town${i}`, "intro__town", r.Town);
+    addElement(`intro${i}`, "p", `restaurant${i}`, "intro__restaurant", r.Name);
+    addElement(`intro${i}`, "div", `dash${i}`, "intro__dash", "");
+    addElement(`intro${i}`, "p", `detail${i}`, "intro__detail", r.HostWords);
 }
 
-function addEmptyBlock(parentRowID, i) {
+// function addBlock(parentID, tagName, id, elementClass) {
+//     var element = document.createElement(tagName);
+//     var textNode = document.createTextNode(text);
+//     element.setAttribute("id", id);
+//     element.setAttribute("class", elementClass);
+//     element.appendChild(textNode);
+
+//     document.getElementById(parentID).appendChild(element);
+// }
+
+function addEmptyBlock(parentRowId, i) {
     if (i % columnCount == 1) {
         for (var j = 0; j < 2; j++) {
-            addElement(parentRowID, "div", "block" + ( i + j ), "block block--empty", "");
+            addElement(parentRowId, "div", "block" + ( i + j ), "block block--empty", "");
         }
     } else if (i % columnCount == 2) {
-        addElement(parentRowID, "div", "block" + i, "block block--empty", "");
+        addElement(parentRowId, "div", `block${i}`, "block block--empty", "");
     }
 }
 
@@ -170,16 +195,6 @@ function addImage(parentID, tagName, id, elementClass, text, src) {
 }
 
 function addElement(parentID, tagName, id, elementClass, text) {
-    var element = document.createElement(tagName);
-    var textNode = document.createTextNode(text);
-    element.setAttribute("id", id);
-    element.setAttribute("class", elementClass);
-    element.appendChild(textNode);
-
-    document.getElementById(parentID).appendChild(element);
-}
-
-function addBlockElement(parentID, tagName, id, elementClass, text) {
     var element = document.createElement(tagName);
     var textNode = document.createTextNode(text);
     element.setAttribute("id", id);
