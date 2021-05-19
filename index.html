@@ -23,10 +23,10 @@
             </p>
         </div>
         <div class="bar">
-            <select id="city" name="bar__city" class="bar__select">
+            <select id="city" name="bar__city" class="bar__select" onchange="changeCity()">
                 <option value="default" selected disabled>請選擇行政區域...</option>
             </select>
-            <select id="town" name="bar__town" class="bar__select">
+            <select id="town" name="bar__town" class="bar__select" onchange="changeTown()">
                 <option value="default" selected disabled>請選擇鄉鎮區...</option>
             </select>
         </div>
@@ -56,9 +56,9 @@
         <p class="footer__text">政府資料開放平台</p>
         <a class="footer__href" href="https://data.gov.tw/dataset/6037">https://data.gov.tw/dataset/6037</a>
     </div>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="entity.js"></script>
+    <script type="text/javascript" src="Data.json"></script>
 </body>
-<script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="entity.js"></script>
-<script type="text/javascript" src="Data.json"></script>
 
 </html>
