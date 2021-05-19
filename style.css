@@ -5,7 +5,7 @@
 
 body {
     background-color: rgb(238, 238, 238);
-    font-family: Microsoft JhengHei;
+    font-family: "Microsoft JhengHei";
 }
 
 a {
@@ -154,8 +154,15 @@ a {
 }
 
 .block:hover .block__intro {
-    animation: 1.8s textSlide;
-    animation-fill-mode: forwards;
+    -webkit-animation: 1.8s textSlide;
+            animation: 1.8s textSlide;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes textSlide{
+    from {bottom: -68px;}
+    to {bottom: 5px;}
 }
 
 @keyframes textSlide{
@@ -164,8 +171,15 @@ a {
 } 
 
 .block:hover .block__photo {
-    animation: 1s photoZoomIn;
-    animation-fill-mode: forwards;
+    -webkit-animation: 1s photoZoomIn;
+            animation: 1s photoZoomIn;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes photoZoomIn{
+    from {transform: scale(1);}
+    to {transform: scale(1.05);}
 }
 
 @keyframes photoZoomIn{
